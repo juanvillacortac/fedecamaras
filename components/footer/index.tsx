@@ -2,7 +2,6 @@ import Link from 'next/link'
 import navs from '@/lib/navigation'
 import styles from './footer.module.css'
 import { Fragment } from 'react'
-import {useGlobalDataContext} from '../page'
 
 const MadeBy = () => (
   <div className={styles['madeBy']}>
@@ -27,8 +26,7 @@ const Section = ({ titulo, childrens }: {
 )
 
 const Isolated = () => {
-  const globalData = useGlobalDataContext()
-  const isolated = navs(globalData).filter(e => !e.childrens)
+  const isolated = navs().filter(e => !e.childrens)
   return (
     <>{isolated.length && (
       <Section titulo="Menu" childrens={isolated as any[]}/>
@@ -37,8 +35,7 @@ const Isolated = () => {
 }
 
 const Childrens = () => {
-  const globalData = useGlobalDataContext()
-  const childrens = navs(globalData).filter(e => e.childrens)
+  const childrens = navs().filter(e => e.childrens)
   return (
     <>{childrens.map((n, i) => (
       <Fragment key={i}>

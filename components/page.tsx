@@ -15,7 +15,7 @@ const globalDataContext = createContext<any>(null)
 export const useGlobalDataContext = () => useContext(globalDataContext)
 
 const brand = 'FEDECAMARAS NE'
-const descriptionDefault = 'Our large selection ensure that we have a vehicle just for you. Whether you are looking for a sedan, coupe, truck, or SUV. We look forward to seeing you soon!'
+const descriptionDefault = 'FEDECAMARAS Nueva Esparta'
 
 const Page = ({ title, brandTitle, description, children, globalData, ...rest }: Props) => {
   const { pathname } = useRouter()

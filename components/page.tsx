@@ -14,8 +14,8 @@ interface Props extends OgImageProps, SeoTagsProps {
 const globalDataContext = createContext<any>(null)
 export const useGlobalDataContext = () => useContext(globalDataContext)
 
-const brand = 'FEDECAMARAS NE'
-const descriptionDefault = 'FEDECAMARAS Nueva Esparta'
+const brand = 'Somos equipo'
+const descriptionDefault = 'En equipo logramos más'
 
 const Page = ({ title, brandTitle, description, children, globalData, ...rest }: Props) => {
   const { pathname } = useRouter()

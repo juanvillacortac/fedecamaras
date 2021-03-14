@@ -1,13 +1,14 @@
 import Page from '@/components/page'
 import Hero, { HeroProps } from './hero'
+import Intro, { IntroProps } from './intro'
 
-interface IndexProps extends HeroProps {
-  globalData?: any
+interface IndexProps extends HeroProps, IntroProps {
 }
 
 const Index = (data: IndexProps) => (
-  <Page globalData={data.globalData}>
+  <Page>
     <Hero {...data}/>
+    <Intro {...data}/>
   </Page>
 )
 

@@ -1,10 +1,8 @@
 import { RefObject, CSSProperties, useState, createContext, useContext } from 'react'
 import { useRef, useEffect } from 'react'
-import { useOutsideClick } from '@/lib/hooks'
 import links from '@/lib/navigation'
 import Link from 'next/link'
 import s from './styles/sidebar.module.css'
-import { useGlobalDataContext } from '../page'
 
 interface ChildrenMenu {
   title?: string
@@ -51,10 +49,9 @@ const ParentLink = (link: {
 }
 
 const Parents = () => {
-  const globalData = useGlobalDataContext()
   return (
     <div className="mb-6" style={{overflowY: 'auto'}}>
-      {links(globalData).map((l, idx) => (
+      {links().map((l, idx) => (
         <ParentLink
           key={idx}
           title={l.titulo}

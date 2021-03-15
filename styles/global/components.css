@@ -1,11 +1,11 @@
 .content {
-	@apply px-4;
+	@apply px-6;
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 }
 .content-lg {
-	@apply px-4;
+	@apply px-6;
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;

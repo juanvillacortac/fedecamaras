@@ -27,7 +27,7 @@ const CamaraComp = ({ nombre, imagen, bgColor, fgColor, modulos, reverse }: Cama
         />
       </V>
       <V
-        className="w-full p-16 px-4 sm:px-16 lg:w-1/2 lg:flex-grow animate"
+        className="w-full p-16 px-6 sm:px-16 lg:w-1/2 lg:flex-grow animate"
         style={{
           backgroundColor: bgColor.hex,
           color: fgColor.hex

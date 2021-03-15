@@ -20,7 +20,7 @@ const Intro = ({ introTitulo, introDescripcion, introImage }: IntroProps) => (
         }}
       />
     </V>
-    <V className="w-full p-16 px-4 text-white sm:px-16 bg-kmb-blue-800 lg:w-1/2 lg:flex-grow animate" oneWay>
+    <V className="w-full p-16 px-6 text-white sm:px-16 bg-kmb-blue-800 lg:w-1/2 lg:flex-grow animate" oneWay>
       <h2
         className="mb-6 text-4xl font-bold uppercase md:text-6xl font-title animate"
         style={setAnim({y: '1rem', d: '700ms'})}

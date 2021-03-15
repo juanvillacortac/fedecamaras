@@ -6,9 +6,9 @@ const iconsProps = {
 }
 
 module.exports = {
-  appName: 'FEDECAMARAS Nueva Esparta',
-  appShortName: 'FEDECAMARAS NE',
-  appDescription: 'FEDECAMARAS NE',
+  appName: 'Somos equipo | FEDECAMARAS NE',
+  appShortName: 'Somos equipo',
+  appDescription: 'En equipo logramos más',
 
   developerName: '',
   developerURL: '',

@@ -23,12 +23,12 @@ const Intro = ({ introTitulo, introDescripcion, introImage }: IntroProps) => (
     <V className="w-full p-16 px-4 text-white sm:px-16 bg-kmb-blue-800 lg:w-1/2 lg:flex-grow animate" oneWay>
       <h2
         className="mb-6 text-4xl font-bold uppercase md:text-6xl font-title animate"
-        style={setAnim({y: '1rem', d: '800ms'})}
+        style={setAnim({y: '1rem', d: '700ms'})}
       >{introTitulo}</h2>
       <div
         className="flex flex-col t-p space-y-4 font-title animate"
         dangerouslySetInnerHTML={{ __html: introDescripcion }}
-        style={setAnim({y: '1rem', d: '1100ms'})}
+        style={setAnim({y: '1rem', d: '1000ms'})}
       />
     </V>
   </div>

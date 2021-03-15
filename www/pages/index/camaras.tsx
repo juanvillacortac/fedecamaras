@@ -36,11 +36,11 @@ const CamaraComp = ({ nombre, imagen, bgColor, fgColor, modulos, reverse }: Cama
       >
         <h2
           className="mb-8 text-4xl font-bold uppercase md:text-6xl font-title animate"
-          style={setAnim({y: '1rem', d: '800ms'})}
+          style={setAnim({y: '1rem', d: '700ms'})}
         >{nombre}</h2>
         <div
           className="flex flex-wrap -m-6 t-p font-title animate"
-          style={setAnim({y: '1rem', d: '1100ms'})}
+          style={setAnim({y: '1rem', d: '1000ms'})}
         >
           {modulos.map((m, i) => (
             <div className="flex flex-col p-6 lg:w-1/2" key={i}>
@@ -56,7 +56,7 @@ const CamaraComp = ({ nombre, imagen, bgColor, fgColor, modulos, reverse }: Cama
           href={`/api/proxy?filename=${escape(presentacion)}`}
           className="flex items-center mt-6 font-bold t-h3 link animate font-title"
           download
-          style={setAnim({y: '1rem', d: '1300ms'})}
+          style={setAnim({y: '1rem', d: '1200ms'})}
         >
           <span className="pb-2 border-b-2" style={{ borderColor: fgColor.hex }}>
             Saber más

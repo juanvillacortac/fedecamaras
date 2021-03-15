@@ -4,6 +4,7 @@ export { default,  } from '@/www/pages/index'
 const query = `
 query InicioQuery {
   inicio {
+    heroSvg
     introTitulo
     introDescripcion
     introImage {

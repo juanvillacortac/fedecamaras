@@ -1,11 +1,10 @@
 import {request} from '@/lib/datocms';
-import {Vehicle} from '@/lib/models/dealerInventory';
 import { GetServerSideProps } from 'next'
 import { SitemapStream, streamToPromise } from 'sitemap'
 
 type BuildSitemap = (items: any) => Promise<any>
 
-const pages = ['', '/dealers']
+const pages = ['']
 
 const buildSitemap: BuildSitemap = (items) => {
   const hostUrl = process.env.HOST_URL ? `https://${process.env.HOST_URL}` : "http://localhost:3000"
@@ -21,35 +20,35 @@ const buildSitemap: BuildSitemap = (items) => {
     })
   })
 
-  items.allDealerInventories.forEach((item: Vehicle) => {
-    sitemap.write({
-      url: `${hostUrl}/dealers/${item.slug}`,
-      lastmodISO: new Date(item.updatedAt).toISOString(),
-      priority: 0.8,
-    });
-  });
+  // items.allDealerInventories.forEach((item: Vehicle) => {
+  //   sitemap.write({
+  //     url: `${hostUrl}/dealers/${item.slug}`,
+  //     lastmodISO: new Date(item.updatedAt).toISOString(),
+  //     priority: 0.8,
+  //   });
+  // });
 
   sitemap.end();
 
   return streamToPromise(sitemap);
 }
 
-const DATA_QUERY = `
-query SitemapQuery {
-  allDealerInventories {
-    slug
-    updatedAt
-  }
-}
-`
+// const DATA_QUERY = `
+// query SitemapQuery {
+//   allDealerInventories {
+//     slug
+//     updatedAt
+//   }
+// }
+// `
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   if (context && context.res) {
     const { res } = context
 
-    const data = await request({ query: DATA_QUERY });
+    // const data = await request({ query: DATA_QUERY });
 
-    const sitemap = await buildSitemap(data);
+    const sitemap = await buildSitemap({});
 
     res.setHeader('content-type', 'text/xml');
     res.write(sitemap.toString());

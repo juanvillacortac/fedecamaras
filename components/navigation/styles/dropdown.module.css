@@ -32,6 +32,7 @@
 	@apply py-4;
 	@apply border;
 	@apply shadow-md;
+	background-color: white;
 	@apply rounded-xl;
 	@apply origin-top-right;
 	@apply border-kmb-gray-500;

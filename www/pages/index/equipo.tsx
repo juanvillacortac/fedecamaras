@@ -11,11 +11,11 @@ const Equipo = ({ equipo }: EquipoProps) => (
   <div className="py-16 overflow-hidden content" id="equipo">
     <V className="flex flex-row items-center -mx-8 text-kmb-blue-800" oneWay>
       <h2
-        className="px-8 text-5xl font-light uppercase font-title animate w-7/10"
+        className="w-full px-8 text-4xl font-light uppercase sm:text-5xl font-title animate lg:w-7/10"
       >
         En equipo <span className="font-bold">logramos +</span>
       </h2>
-      <div className="px-8 bg-black w-4/10 animate" style={{height: '1px !important', ...setAnim({x: '50%'})}}></div>
+      <div className="hidden px-8 bg-black lg:block w-4/10 animate" style={{height: '1px !important', ...setAnim({x: '50%'})}}></div>
     </V>
     <div className="flex flex-wrap space-y-4 lg:space-y-0">
       {equipo.map((e, i) => (

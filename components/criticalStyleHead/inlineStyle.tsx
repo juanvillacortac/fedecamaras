@@ -8,7 +8,7 @@ export interface Props {
 }
 
 export const InlineStyle: React.FC<Props> = ({ assetPrefix, file, nonce }) => {
-  const pathSSR = join(process.cwd(), '__next')
+  const pathSSR = join(process.cwd(), '_next')
   const pathSSG = join(process.cwd(), '.next')
   const path = existsSync(pathSSG) ? pathSSG : pathSSR
   const cssPath = join(path, file)

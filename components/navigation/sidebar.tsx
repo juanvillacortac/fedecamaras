@@ -3,6 +3,7 @@ import { useRef, useEffect } from 'react'
 import links from '@/lib/navigation'
 import Link from 'next/link'
 import s from './styles/sidebar.module.css'
+import {useGlobalDataContext} from '../page'
 
 interface ChildrenMenu {
   title?: string
@@ -50,9 +51,10 @@ const ParentLink = (link: {
 }
 
 const Parents = ({ toggle }: { toggle?: () => void }) => {
+  const data = useGlobalDataContext()
   return (
     <div className="mb-6" style={{overflowY: 'auto'}}>
-      {links().map((l, idx) => (
+      {links(data).map((l, idx) => (
         <ParentLink
           key={idx}
           title={l.titulo}

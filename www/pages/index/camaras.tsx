@@ -12,10 +12,10 @@ export interface CamaraCompProps extends Camara {
   reverse?: boolean
 }
 
-const CamaraComp = ({ nombre, imagen, bgColor, fgColor, modulos, reverse }: CamaraCompProps) => {
+const CamaraComp = ({ nombre, imagen, bgColor, fgColor, modulos, slug, reverse }: CamaraCompProps) => {
   const { presentacion } = useGlobalDataContext()
   return (
-    <div className={`overflow-hidden flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} w-full`}>
+    <div className={`overflow-hidden flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} w-full`} id={slug}>
       <V className="flex-grow w-full lg:w-1/2 animate" oneWay>
         <Image
           data={{

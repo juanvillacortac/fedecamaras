@@ -12,6 +12,7 @@ query InicioQuery {
   }
   allCamaras {
     nombre
+    slug
     bgColor {
       hex
     }

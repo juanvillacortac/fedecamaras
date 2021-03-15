@@ -14,6 +14,7 @@ export interface ModuloCamara extends CMSType {
 
 export interface Camara extends CMSType {
   nombre?: string
+  slug?: string
   bgColor?: Color
   fgColor?: Color
   imagen?: {

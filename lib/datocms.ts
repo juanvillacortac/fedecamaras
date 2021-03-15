@@ -20,6 +20,14 @@ export function request({ query, variables, preview }: {
 
 const GLOBAL_DATA_QUERY = `
 query GlobalDataQuery {
+  allLineaEstrategicas {
+    titulo
+    slug
+  }
+  allCamaras {
+    nombre
+    slug
+  }
   global {
     presentacion {
       url
@@ -29,8 +37,10 @@ query GlobalDataQuery {
 `
 
 export async function getGlobalData({ preview = false }: { preview?: boolean } = {}): Promise<any> {
-  const { global } = await request({ query: GLOBAL_DATA_QUERY, preview })
+  const { global, allCamaras, allLineaEstrategicas } = await request({ query: GLOBAL_DATA_QUERY, preview })
   return {
+    camaras: allCamaras,
+    lineas: allLineaEstrategicas,
     presentacion: global?.presentacion?.url,
   }
 }

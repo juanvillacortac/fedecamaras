@@ -13,8 +13,8 @@ const Index = (data: IndexProps) => (
     <Hero {...data}/>
     <Intro {...data}/>
     <Equipo {...data}/>
-    <Camaras {...data}/>
     <Lineas {...data}/>
+    <Camaras {...data}/>
   </Page>
 )
 

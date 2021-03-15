@@ -32,7 +32,7 @@ query InicioQuery {
 ${responsiveImageFragment}
 `
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const { inicio, allCamaras } = await request({ query })
   const globalData = await getGlobalData()
   return {

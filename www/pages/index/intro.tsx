@@ -11,7 +11,7 @@ export interface IntroProps {
 }
 
 const Intro = ({ introTitulo, introDescripcion, introImage }: IntroProps) => (
-  <div className="flex flex-wrap w-full">
+  <div className="flex flex-wrap w-full" id="introduccion">
     <V className="w-full lg:w-1/2 animate" oneWay>
       <Image
         data={{

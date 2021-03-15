@@ -30,7 +30,7 @@ export default function Navbar() {
   return (
     <header className={s.header}>
       <Sidebar open={sidebar} toggle={toggleSidebar}/>
-      <div className={s.headerWrapper}>
+      <div className={`${s.headerWrapper} duration-200 ${scrollY > navH && 'shadow-md'}`}>
         <div className="flex overflow-hidden pointer-events-auto">
           <Link href="/">
             <a title="Home" className="overflow-hidden text-2xl font-bold text-blue-800 duration-200 font-title transform hover:scale-95">

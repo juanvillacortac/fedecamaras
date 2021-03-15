@@ -14,7 +14,6 @@ export interface CamaraCompProps extends Camara {
 
 const CamaraComp = ({ nombre, imagen, bgColor, fgColor, modulos, reverse }: CamaraCompProps) => {
   const { presentacion } = useGlobalDataContext()
-  console.log(presentacion)
   return (
     <div className={`overflow-hidden flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} w-full`}>
       <V className="flex-grow w-full lg:w-1/2 animate" oneWay>

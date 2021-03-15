@@ -61,7 +61,7 @@ const Experiencia = ({ equipo }: EquipoProps) => (
 
 const General = ({ equipo }: EquipoProps) => (
   <div className="py-16 overflow-hidden content-lg" id="equipo">
-    <V className="flex flex-row items-center text-kmb-blue-800 overflow-hidden" oneWay>
+    <V className="flex flex-row items-center overflow-hidden text-kmb-blue-800" oneWay>
       <h2
         className="w-full text-4xl font-light uppercase sm:text-5xl font-title animate lg:w-7/10"
       >

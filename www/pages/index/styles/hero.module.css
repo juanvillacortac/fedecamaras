@@ -25,19 +25,20 @@
 
 @screen sm {
 	.title {
-		@apply text-6xl;
+		@apply text-2xl;
 		@apply mb-4;
 	}
 }
 
 .subtitle {
-	@apply text-xl;
+	@apply text-4xl;
 	@apply font-light;
 	@apply font-title;
+	@apply leading-none;
 }
 
 @screen sm {
 	.subtitle {
-		@apply text-4xl;
+		@apply text-8xl;
 	}
 }

@@ -49,6 +49,7 @@ const Page = ({ title, brandTitle, description, children, globalData, ...rest }:
         main {
           width: 100%;
           flex-grow: 1;
+          overflow: hidden;
         }
         .padded {
           padding-top: 96px;

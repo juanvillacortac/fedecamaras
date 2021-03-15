@@ -19,8 +19,9 @@ const ParentLink = (link: {
   title?: string,
   href?: string,
   childrens?: any[],
+  toggle?: () => void
 }) => {
-  const { idx, title, href, childrens } = link
+  const { idx, title, href, childrens, toggle } = link
   const css: CSSProperties = { animationDelay: `${(( idx - 1 ) * 200) - 300}ms`, paddingRight: '0.5rem' }
   const [, setChildMenu] = useChildState()
   if (childrens) {
@@ -40,7 +41,7 @@ const ParentLink = (link: {
   } else {
     return (
       <Link href={href || '/'}>
-        <a className={s.sidebarLink}>
+        <a className={s.sidebarLink} onClick={toggle}>
           <p style={css}>{title}</p>
         </a>
       </Link>
@@ -48,7 +49,7 @@ const ParentLink = (link: {
   }
 }
 
-const Parents = () => {
+const Parents = ({ toggle }: { toggle?: () => void }) => {
   return (
     <div className="mb-6" style={{overflowY: 'auto'}}>
       {links().map((l, idx) => (
@@ -58,6 +59,7 @@ const Parents = () => {
           idx={idx}
           href={l.href}
           childrens={l.childrens}
+          toggle={toggle}
         />
       ))}
     </div>
@@ -68,19 +70,20 @@ const ChildLink = (link: {
   idx: number,
   title?: string,
   href?: string,
+  toggle?: () => void
 }) => {
-  const { idx, title, href } = link
+  const { idx, title, href, toggle } = link
   const css: CSSProperties = { animationDelay: `${(( idx - 1 ) * 200) - 300}ms`, paddingRight: '0.5rem' }
   return (
     <Link href={href || '/'}>
-      <a className={s.childLink}>
+      <a className={s.childLink} onClick={toggle}>
         <p style={css}>{title}</p>
       </a>
     </Link>
   )
 }
 
-const Childs = () => {
+const Childs = ({ toggle }: { toggle?: () => void }) => {
   const [childMenu, setChildMenu] = useChildState()
   return (
     <>
@@ -94,19 +97,19 @@ const Childs = () => {
       <p className={s.childTitle}>{childMenu.title}</p>
       <div className={s.childMenuWrapper}>
         {childMenu.childrens.map((l, idx) => (
-          <ChildLink {...l} title={l.titulo} idx={idx} key={idx}/>
+          <ChildLink {...l} title={l.titulo} idx={idx} key={idx} toggle={toggle}/>
         ))}
       </div>
     </>
   )
 }
 
-const Wrapper = () => {
+const Wrapper = (props: { toggle?: () => void }) => {
   const [childMenu] = useChildState()
 
   return (
     <div className={s.sidebarWrapper}>
-      {childMenu ? <Childs/> : <Parents/>}
+      {childMenu ? <Childs {...props}/> : <Parents {...props}/>}
     </div>
   )
 }
@@ -116,7 +119,7 @@ export interface SidebarProps {
   toggle: () => void
 }
 
-const Sidebar = ({ open = false }: SidebarProps) => {
+const Sidebar = ({ open = false, toggle }: SidebarProps) => {
   const sidebarRef: RefObject<HTMLElement> = useRef(null)
   const sidebarState: ChildState = useState(null)
   const [,setSidebarState] = sidebarState
@@ -138,7 +141,7 @@ const Sidebar = ({ open = false }: SidebarProps) => {
         ref={sidebarRef}
         style={{ opacity: `${open ? '1' : '0'}` }}
       >
-        <Wrapper/>
+        <Wrapper toggle={toggle}/>
       </aside>
     </sidebarContext.Provider>
   )

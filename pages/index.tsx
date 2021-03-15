@@ -27,18 +27,32 @@ query InicioQuery {
       texto
     }
   }
+  allIntegrantes {
+    nombre
+    cargo
+    imagenSm {
+      ${responsiveImageHelper({ w: 545, h: 812, fit: 'crop' })}
+    }
+    imagenLg {
+      ${responsiveImageHelper({ w: 640, h: 812, fit: 'crop' })}
+    }
+    ocupaciones {
+      ocupacion
+    }
+  }
 }
 
 ${responsiveImageFragment}
 `
 
 export const getStaticProps = async () => {
-  const { inicio, allCamaras } = await request({ query })
+  const { inicio, allCamaras, allIntegrantes } = await request({ query })
   const globalData = await getGlobalData()
   return {
     props: {
       ...inicio,
       camaras: allCamaras,
+      equipo: allIntegrantes,
       globalData
     }
   }

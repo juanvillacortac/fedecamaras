@@ -8,7 +8,7 @@ export interface EquipoProps {
 }
 
 const Equipo = ({ equipo }: EquipoProps) => (
-  <div className="py-16 overflow-hidden content" id="equipo">
+  <div className="py-16 overflow-hidden content-lg" id="equipo">
     <V className="flex flex-row items-center -mx-8 text-kmb-blue-800" oneWay>
       <h2
         className="w-full px-8 text-4xl font-light uppercase sm:text-5xl font-title animate lg:w-7/10"

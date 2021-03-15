@@ -40,19 +40,31 @@ query InicioQuery {
       ocupacion
     }
   }
+  allLineaEstrategicas {
+    titulo
+    slug
+    icon
+    imagen {
+      ${responsiveImageHelper({ w: 800, h: 480, fit: 'crop' })}
+    }
+    descripcion {
+      bullet
+    }
+  }
 }
 
 ${responsiveImageFragment}
 `
 
 export const getStaticProps = async () => {
-  const { inicio, allCamaras, allIntegrantes } = await request({ query })
+  const { inicio, allCamaras, allIntegrantes, allLineaEstrategicas } = await request({ query })
   const globalData = await getGlobalData()
   return {
     props: {
       ...inicio,
       camaras: allCamaras,
       equipo: allIntegrantes,
+      lineasEstrategicas: allLineaEstrategicas,
       globalData
     }
   }

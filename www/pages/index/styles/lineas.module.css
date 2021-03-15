@@ -1,0 +1,12 @@
+.lineaGeneral {
+	position: relative;
+	background-color: #F3F3F3;
+	@apply text-kmb-blue-800;
+	@apply duration-200;
+	aspect-ratio: 1/1;
+}
+
+.lineaGeneral:hover {
+	@apply bg-kmb-blue-800;
+	color: white;
+}

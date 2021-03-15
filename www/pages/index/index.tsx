@@ -1,14 +1,16 @@
-import Page from '@/components/page'
+import Page, { PageProps } from '@/components/page'
 import Hero, { HeroProps } from './hero'
 import Intro, { IntroProps } from './intro'
+import Camaras, { CamarasProps } from './camaras'
 
-interface IndexProps extends HeroProps, IntroProps {
+interface IndexProps extends PageProps, HeroProps, IntroProps, CamarasProps {
 }
 
 const Index = (data: IndexProps) => (
-  <Page>
+  <Page {...data}>
     <Hero {...data}/>
     <Intro {...data}/>
+    <Camaras {...data}/>
   </Page>
 )
 

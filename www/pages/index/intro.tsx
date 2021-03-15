@@ -12,7 +12,7 @@ export interface IntroProps {
 
 const Intro = ({ introTitulo, introDescripcion, introImage }: IntroProps) => (
   <div className="flex flex-wrap w-full">
-    <V className="w-full sm:w-1/2 animate" oneWay>
+    <V className="w-full lg:w-1/2 animate" oneWay>
       <Image
         data={{
           ...introImage?.responsiveImage,
@@ -20,7 +20,7 @@ const Intro = ({ introTitulo, introDescripcion, introImage }: IntroProps) => (
         }}
       />
     </V>
-    <V className="w-full p-16 px-4 text-white sm:px-16 bg-kmb-blue-800 sm:w-1/2 sm:flex-grow animate">
+    <V className="w-full p-16 px-4 text-white sm:px-16 bg-kmb-blue-800 lg:w-1/2 lg:flex-grow animate" oneWay>
       <h2
         className="mb-6 text-4xl font-bold uppercase md:text-6xl font-title animate"
         style={setAnim({y: '1rem', d: '800ms'})}

@@ -6,9 +6,12 @@ import OgImage, { OgImageProps } from './og-image'
 import SeoTags, { SeoTagsProps } from './seo-tags'
 import { useRouter } from 'next/router'
 
-interface Props extends OgImageProps, SeoTagsProps {
-  children?: ReactNode
+export interface PageProps {
   globalData?: any
+}
+
+interface Props extends OgImageProps, SeoTagsProps, PageProps {
+  children?: ReactNode
 }
 
 const globalDataContext = createContext<any>(null)

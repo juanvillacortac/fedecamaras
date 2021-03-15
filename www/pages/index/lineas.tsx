@@ -10,7 +10,7 @@ export interface LineasProps {
 }
 
 const Especificas = ({ lineasEstrategicas }: LineasProps) => (
-  <div className="py-12 content-lg">
+  <div className="py-12 content-lg font-title">
     <V className={`flex flex-col sm:flex-row w-full animate mb-12`} id={lineasEstrategicas[0].slug} oneWay>
       <div className="relative w-full sm:pr-6 sm:w-1/2">
         <div className="absolute right-0 z-10 w-16 h-16 mt-4 mb-4 mr-4 text-white sm:mr-10 icon" dangerouslySetInnerHTML={{ __html: lineasEstrategicas[0].icon }}/>

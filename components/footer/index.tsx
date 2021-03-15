@@ -30,9 +30,9 @@ const Isolated = () => {
   const data = useGlobalDataContext()
   const isolated = navs(data).filter(e => !e.childrens)
   return (
-    <>{isolated.length && (
-      <Section titulo="Menu" childrens={isolated as any[]}/>
-    )}</>
+    <>{isolated.length > 0 ? (
+      <Section titulo="Menú" childrens={isolated as any[]}/>
+    ) : null}</>
   )
 }
 

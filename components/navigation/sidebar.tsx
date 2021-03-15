@@ -94,7 +94,7 @@ const Childs = ({ toggle }: { toggle?: () => void }) => {
         onClick={() => setChildMenu(null)}
       >
         <span className="i jam:chevron-left"/>
-        Back
+        Atrás
       </button>
       <p className={s.childTitle}>{childMenu.title}</p>
       <div className={s.childMenuWrapper}>

@@ -9,6 +9,15 @@ export interface EquipoProps {
 
 const Experiencia = ({ equipo }: EquipoProps) => (
   <div id="experiencia-gremial">
+    <div className="pb-8 content-lg ">
+      <V className="flex flex-row items-center -mx-8 overflow-hidden text-kmb-blue-800" oneWay>
+        <h2
+          className="w-full px-8 text-4xl font-light uppercase sm:text-5xl font-title animate lg:text-right"
+        >
+          Nuestra experiencia <span className="font-bold">gremial</span>
+        </h2>
+      </V>
+    </div>
     {equipo.map(({ imagenLg, nombre, cargo, ocupaciones }, i) => (
       <div className={`overflow-hidden flex flex-col content-lg ${i % 2 != 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} my-8`}>
         <V className={`flex-grow w-full lg:w-1/2 animate ${i % 2 == 0 ? 'lg:pr-8' : 'lg:pl-8'}`} oneWay>
@@ -52,9 +61,9 @@ const Experiencia = ({ equipo }: EquipoProps) => (
 
 const General = ({ equipo }: EquipoProps) => (
   <div className="py-16 overflow-hidden content-lg" id="equipo">
-    <V className="flex flex-row items-center -mx-8 text-kmb-blue-800" oneWay>
+    <V className="flex flex-row items-center text-kmb-blue-800 overflow-hidden" oneWay>
       <h2
-        className="w-full px-8 text-4xl font-light uppercase sm:text-5xl font-title animate lg:w-7/10"
+        className="w-full text-4xl font-light uppercase sm:text-5xl font-title animate lg:w-7/10"
       >
         En equipo <span className="font-bold">logramos +</span>
       </h2>

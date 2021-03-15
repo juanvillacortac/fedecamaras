@@ -17,9 +17,9 @@ const Equipo = ({ equipo }: EquipoProps) => (
       </h2>
       <div className="hidden px-8 bg-black lg:block w-4/10 animate" style={{height: '1px !important', ...setAnim({x: '50%'})}}></div>
     </V>
-    <div className="flex flex-wrap space-y-4 lg:space-y-0">
+    <div className="flex flex-wrap -my-8 lg:my-0 mt-16">
       {equipo.map((e, i) => (
-        <V className="relative w-full mt-16 lg:w-1/4 animate" key={i} style={setAnim({y: '1rem'})}>
+        <V className="relative w-full py-8 lg:py-0 lg:w-1/4 animate" key={i} style={setAnim({y: '1rem'})}>
           <div className="absolute z-20 mt-4 ml-4 text-xl text-white font-title lg:text-base">
             <p className="font-bold">{e.nombre}</p>
             <p className="">{e.cargo}</p>

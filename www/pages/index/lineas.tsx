@@ -10,38 +10,36 @@ export interface LineasProps {
 }
 
 const Especificas = ({ lineasEstrategicas }: LineasProps) => (
-  <div className="content-lg">
-    <div className="py-12">
-      <V className={`flex flex-col sm:flex-row w-full animate mb-2`} id={lineasEstrategicas[0].slug} oneWay>
-        <div className="relative w-full sm:pr-6 sm:w-1/2">
-          <div className="absolute right-0 z-10 w-16 h-16 mt-4 mb-4 mr-4 text-white sm:mr-10 icon" dangerouslySetInnerHTML={{ __html: lineasEstrategicas[0].icon }}/>
-          <Image
-            data={{
-              ...lineasEstrategicas[0].imagen.responsiveImage,
-              alt: lineasEstrategicas[0].titulo
-            }}
-            className={`w-full mb-4 lg:mb-0`}
-            pictureClassName="w-full"
-          />
-          <style jsx>{`
-            .icon :global(svg) {
-              width: 100% !important;
-              height: 100% !important;
-            }`}
-          </style>
-        </div>
-        <div className={`w-full sm:w-1/2 text-black sm:pl-6`}>
-          <h2 className="w-full pb-4 border-b border-black t-h2 font-title">{lineasEstrategicas[0].titulo}</h2>
-          <ul className="pt-6 pl-6 list-disc space-y-4">
-            {lineasEstrategicas[0].descripcion.map((m, i) => (
-              <li key={i}>
-                <div className="flex flex-col space-y-2 t-p" dangerouslySetInnerHTML={{__html: m.bullet}}/>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </V>
-    </div>
+  <div className="py-12 content-lg">
+    <V className={`flex flex-col sm:flex-row w-full animate mb-12`} id={lineasEstrategicas[0].slug} oneWay>
+      <div className="relative w-full sm:pr-6 sm:w-1/2">
+        <div className="absolute right-0 z-10 w-16 h-16 mt-4 mb-4 mr-4 text-white sm:mr-10 icon" dangerouslySetInnerHTML={{ __html: lineasEstrategicas[0].icon }}/>
+        <Image
+          data={{
+            ...lineasEstrategicas[0].imagen.responsiveImage,
+            alt: lineasEstrategicas[0].titulo
+          }}
+          className={`w-full mb-4 lg:mb-0`}
+          pictureClassName="w-full"
+        />
+        <style jsx>{`
+          .icon :global(svg) {
+            width: 100% !important;
+            height: 100% !important;
+          }`}
+        </style>
+      </div>
+      <div className={`w-full sm:w-1/2 text-black sm:pl-6`}>
+        <h2 className="w-full pb-4 border-b border-black t-h2 font-title">{lineasEstrategicas[0].titulo}</h2>
+        <ul className="pt-6 pl-6 list-disc space-y-4">
+          {lineasEstrategicas[0].descripcion.map((m, i) => (
+            <li key={i}>
+              <div className="flex flex-col space-y-2 t-p" dangerouslySetInnerHTML={{__html: m.bullet}}/>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </V>
     <div className="w-full grid gap-12 grid-cols-1 sm:grid-cols-2">
       {lineasEstrategicas.slice(1, lineasEstrategicas.length).map((l, i) => (
         <V className={`flex flex-col w-full animate`} key={i} id={l.slug} oneWay>

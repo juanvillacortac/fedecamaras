@@ -10,12 +10,7 @@ export interface Props {
 export const InlineStyle: React.FC<Props> = ({ assetPrefix, file, nonce }) => {
   const pathSSR = join(process.cwd(), '__next')
   const pathSSG = join(process.cwd(), '.next')
-  let path = ''
-  if (existsSync(pathSSG)) {
-    path = pathSSG
-  } else {
-    path = pathSSR
-  }
+  const path = existsSync(pathSSG) ? pathSSG : pathSSR
   const cssPath = join(path, file)
   const cssSource = readFileSync(cssPath, 'utf-8')
   const html = { __html: cssSource }

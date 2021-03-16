@@ -1,5 +1,4 @@
-import { ResponsiveImageType } from 'react-datocms'
-import { CMSType, Color } from './cms'
+import { CMSType, Color, ResponsiveImage } from './cms'
 
 export interface DealerCategory extends CMSType {
   name?: string
@@ -17,8 +16,6 @@ export interface Camara extends CMSType {
   slug?: string
   bgColor?: Color
   fgColor?: Color
-  imagen?: {
-    responsiveImage?: ResponsiveImageType
-  }
+  imagen?: ResponsiveImage
   modulos?: ModuloCamara[]
 }

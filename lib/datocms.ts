@@ -51,9 +51,9 @@ export const responsiveImageHelper = ({ w, h, fit }: {
   fit?: string
 }) => {
   return `responsiveImage(imgixParams: {
-    ${w && `w: ${w},`}
-    ${h && `h: ${h},`}
-    ${fit && `fit: ${fit},`}
+    ${w ? `w: ${w},` : ''}
+    ${h ? `h: ${h},` : ''}
+    ${fit ? `fit: ${fit},` : ''}
     auto: format
   }) {
     ...responsiveImageFragment

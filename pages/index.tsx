@@ -42,6 +42,13 @@ query InicioQuery {
       ocupacion
     }
   }
+  allAlbums(first: 3) {
+    titulo
+    slug
+    imagenes {
+      ${responsiveImageHelper({ w: 256, h: 256, fit: 'crop' })}
+    }
+  }
   allLineaEstrategicas {
     titulo
     slug
@@ -59,7 +66,8 @@ ${responsiveImageFragment}
 `
 
 export const getStaticProps = async () => {
-  const { inicio, allCamaras, allIntegrantes, allLineaEstrategicas } = await request({ query })
+
+  const { inicio, allCamaras, allIntegrantes, allLineaEstrategicas, allAlbums } = await request({ query })
   const globalData = await getGlobalData()
   return {
     props: {
@@ -67,7 +75,8 @@ export const getStaticProps = async () => {
       camaras: allCamaras,
       equipo: allIntegrantes,
       lineasEstrategicas: allLineaEstrategicas,
-      globalData
+      albums: allAlbums,
+      globalData,
     }
   }
 }

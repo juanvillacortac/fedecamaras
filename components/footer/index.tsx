@@ -56,7 +56,7 @@ const Elements = () => (
 )
 
 const Footer = () => (
-  <footer className="py-12 content">
+  <footer className="pt-16 pb-12 content-lg">
     <Elements/>
     <MadeBy/>
   </footer>

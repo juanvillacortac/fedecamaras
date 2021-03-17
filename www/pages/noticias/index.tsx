@@ -23,6 +23,9 @@ export const Slug = (data: SlugProps) => {
     <Page {...data} title={data.noticia.titulo}>
       <HeroSlug titulo={data.noticia.titulo}/>
       <div className="pb-16 content-lg">
+        <Viewport>
+          <p className="pl-4 mb-16 text-lg border-l-4 border-kmb-blue-800 font-title animate" style={setAnim({x: '-1rem'})}>{data.noticia.descripcion}</p>
+        </Viewport>
         <Viewport className="animate" oneWay>
           <Image
             data={{
@@ -32,26 +35,30 @@ export const Slug = (data: SlugProps) => {
           <h3 className="mt-6 text-kmb-blue-900 t-h3 font-title">Actualizado el {fecha}</h3>
         </Viewport>
       </div>
-      <Viewport className="px-4 pb-16 lg:mx-auto lg:w-5/10 animate prose font-title" oneWay style={setAnim({y: '1rem'})}>
+      <Viewport className="w-full px-4 pb-16 mx-auto lg:w-5/10 animate prose font-title" oneWay style={setAnim({y: '0.5rem'})}>
         <StructuredText
           data={data.noticia.cuerpo}
           renderBlock={({ record }) => {
             if (record.__typename === 'ImageRecord') {
               const imagen = (record.imagen as ResponsiveImage)
-              return <Image data={imagen.responsiveImage} />;
+              return (
+                <Viewport className="my-6 lg:-mx-16 animate" oneWay>
+                  <Image data={imagen.responsiveImage} pictureStyle={{margin: '0'}} />
+                </Viewport>
+              )
             }
 
             return (
               <>
-                <p className="font-bold t-h3">Oops, dejémosle esto al programador :(</p>
+                <p className="font-bold t-h3">Oops, dejémosle esto al programador</p>
                 <pre>{JSON.stringify(record, null, 2)}</pre>
               </>
-            );
+            )
           }}
         />
       </Viewport>
     </Page>
-  )
+            )
 }
 
 const Index = (data: IndexProps) => (

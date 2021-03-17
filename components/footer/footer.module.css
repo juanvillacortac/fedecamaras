@@ -27,7 +27,7 @@
 	@apply text-gray-600;
 }
 
-@screen md {
+@screen lg {
 	.elements {
 		flex-direction: row;
 	}
@@ -39,7 +39,7 @@
 	@apply my-4;
 }
 
-@screen md {
+@screen lg {
 	.el:last-of-type {
 		text-align: right;
 	}

@@ -3,6 +3,7 @@ import navs from '@/lib/navigation'
 import styles from './footer.module.css'
 import { Fragment } from 'react'
 import {useGlobalDataContext} from '../page'
+import Viewport, {setAnim} from '../viewport'
 
 const MadeBy = () => (
   <div className={styles['madeBy']}>
@@ -57,8 +58,10 @@ const Elements = () => (
 
 const Footer = () => (
   <footer className="pt-16 pb-12 content-lg">
-    <Elements/>
-    <MadeBy/>
+    <Viewport className="animate" oneWay style={setAnim({y: '0.5rem'})}>
+      <Elements/>
+      <MadeBy/>
+    </Viewport>
   </footer>
 )
 

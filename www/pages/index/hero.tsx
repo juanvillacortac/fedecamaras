@@ -12,7 +12,7 @@ const Hero = ({ heroSvg }: HeroProps) => (
     <div className="flex flex-wrap-reverse items-center my-auto lg:flex-wrap content">
       <V className="w-full lg:w-6/10" style={setAnim({y: '200%', r: '6deg', time: '1.5s'})}>
         <div className="overflow-hidden text-black uppercase">
-          <div className="sm:w-4/10 animate">
+          <div className="sm:w-3/10 animate">
             <Image src="/images/logo.png" width="591" height="157" title="Fedecamaras Nueva Esparta" alt="Fedecamaras Nueva Esparta"/>
           </div>
         </div>

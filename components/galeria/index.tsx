@@ -7,7 +7,7 @@ const AlbumCard = ({ imagenes, titulo, slug }: Album) => (
   <Link href={{ pathname: '/galeria/[slug]', query: { slug } }}>
     <a className="hover:scale-95 transform duration-200">
       <V className="flex flex-col animate" oneWay>
-        <div className="flex-col overflow-hidden border rounded-lg shadow-lg bg-kmb-gray-900 border-kmb-gray-800">
+        <div className="flex-col border bg-kmb-gray-900 border-kmb-gray-200">
           <Image
             data={{
               ...imagenes[0].responsiveImage,
@@ -30,7 +30,7 @@ const AlbumCard = ({ imagenes, titulo, slug }: Album) => (
               ))}
             </div>
           )}
-          <div className="w-full p-2 bg-gray-100 border-t border-kmb-gray-800">
+          <div className="w-full p-2 bg-gray-100 border-t border-kmb-gray-200">
             <p className="text-lg font-light font-title">{titulo}</p>
           </div>
         </div>

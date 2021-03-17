@@ -1,0 +1,31 @@
+.noticiaCard {
+	background-color: #F3F3F3;
+	@apply duration-200;
+	color: black;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+@screen lg {
+	.noticiaCard {
+		flex-direction: row;
+	}
+}
+
+.noticiaCard:hover {
+	@apply bg-kmb-blue-800;
+	color: white;
+}
+
+.noticiaCard :global(svg) {
+	width: 100% !important;
+	height: 100% !important;
+}
+.noticiaCard :global(.i) {
+	padding-left: 0.5rem;
+	transition: padding 0.2s;
+}
+.noticiaCard:hover :global(.i) {
+	padding-left: 1rem;
+}

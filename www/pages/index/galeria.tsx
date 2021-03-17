@@ -19,7 +19,7 @@ const Galeria = (props: GaleriaProps) => (
       </V>
     </div>
     <AlbumCardContainer {...props}/>
-    <V className="flex mx-auto mt-6 animate" oneWay>
+    <V className="flex mx-auto mt-8 animate" oneWay>
       <Link href="/galeria">
         <a className="mx-auto underline t-h3 hover:scale-95 transform duration-200 font-title">Ir a la galería</a>
       </Link>

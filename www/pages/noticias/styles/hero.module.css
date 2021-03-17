@@ -1,0 +1,43 @@
+.hero {
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	color: white;
+}
+
+.hero :global(.gradient) {
+	@apply bg-gradient-to-br;
+	@apply from-kmb-blue-300;
+	@apply via-kmb-blue-500;
+	@apply to-kmb-blue-700;
+	@apply bg-clip-text;
+	@apply text-transparent;
+}
+
+.title {
+	@apply text-3xl;
+	@apply mb-2;
+	@apply font-bold;
+	@apply font-title;
+}
+
+@screen sm {
+	.title {
+		@apply text-2xl;
+		@apply mb-4;
+	}
+}
+
+.subtitle {
+	@apply text-4xl;
+	@apply font-light;
+	@apply font-title;
+	@apply leading-none;
+}
+
+@screen sm {
+	.subtitle {
+		@apply text-8xl;
+	}
+}

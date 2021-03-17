@@ -60,14 +60,29 @@ query InicioQuery {
       bullet
     }
   }
+  allNoticiaEntradas(first: 3) {
+    updatedAt
+    titulo
+    slug
+    descripcion
+    thumbnail {
+      ${responsiveImageHelper({ w: 800, h: 480, fit: 'crop' })}
+    }
+  }
 }
 
 ${responsiveImageFragment}
 `
 
 export const getStaticProps = async () => {
-
-  const { inicio, allCamaras, allIntegrantes, allLineaEstrategicas, allAlbums } = await request({ query })
+  const {
+    inicio,
+    allCamaras,
+    allIntegrantes,
+    allLineaEstrategicas,
+    allAlbums,
+    allNoticiaEntradas,
+  } = await request({ query })
   const globalData = await getGlobalData()
   return {
     props: {
@@ -76,6 +91,7 @@ export const getStaticProps = async () => {
       equipo: allIntegrantes,
       lineasEstrategicas: allLineaEstrategicas,
       albums: allAlbums,
+      noticias: allNoticiaEntradas,
       globalData,
     }
   }

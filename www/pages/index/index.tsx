@@ -5,8 +5,18 @@ import Equipo, { EquipoProps } from './equipo'
 import Camaras, { CamarasProps } from './camaras'
 import Lineas, { LineasProps } from './lineas'
 import Galeria, { GaleriaProps } from './galeria'
+import Noticias, { NoticiasProps } from './noticias'
 
-interface IndexProps extends PageProps, HeroProps, IntroProps, EquipoProps, CamarasProps, LineasProps, GaleriaProps {
+interface IndexProps extends
+PageProps,
+HeroProps,
+IntroProps,
+EquipoProps,
+CamarasProps,
+LineasProps,
+GaleriaProps,
+NoticiasProps {
+
 }
 
 const Index = (data: IndexProps) => (
@@ -17,6 +27,7 @@ const Index = (data: IndexProps) => (
     <Lineas {...data}/>
     <Camaras {...data}/>
     <Galeria {...data}/>
+    <Noticias {...data}/>
   </Page>
 )
 

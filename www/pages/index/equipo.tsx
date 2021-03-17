@@ -19,7 +19,7 @@ const Experiencia = ({ equipo }: EquipoProps) => (
       </V>
     </div>
     {equipo.map(({ imagenLg, nombre, cargo, ocupaciones }, i) => (
-      <div className={`overflow-hidden flex flex-col content-lg ${i % 2 != 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} my-8`}>
+      <div className={`overflow-hidden flex flex-col content-lg ${i % 2 != 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} my-8`} key={i}>
         <V className={`flex-grow w-full lg:w-1/2 animate ${i % 2 == 0 ? 'lg:pr-8' : 'lg:pl-8'}`} oneWay>
           <Image
             data={{

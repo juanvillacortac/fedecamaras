@@ -12,7 +12,7 @@ const Hero = ({ heroSvg }: HeroProps) => (
     <div className="flex flex-wrap-reverse items-center my-auto lg:flex-wrap content">
       <V className="w-full lg:w-6/10" style={setAnim({y: '200%', r: '6deg', time: '1.5s'})}>
         <div className="overflow-hidden text-black uppercase">
-          <div className="sm:w-3/10 animate">
+          <div className="mt-6 w-8/10 sm:mt-0 sm:w-3/10 animate">
             <Image src="/images/logo.png" width="591" height="157" title="Fedecamaras Nueva Esparta" alt="Fedecamaras Nueva Esparta"/>
           </div>
         </div>
@@ -42,7 +42,7 @@ const Hero = ({ heroSvg }: HeroProps) => (
       <V className="w-full lg:w-4/10 animate heroImg" style={setAnim({ x: '1rem', d: '800ms' })}>
         <div className="mx-auto lg:pl-16 w-6/10 h-6/10 lg:w-full">
           <svg viewBox="0 0 485 348" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0)">
+            <g clipPath="url(#clip0)">
               <path d="M158.721 0.519958C164.856 0.519958 171.823 0.939922 171.823 20.7882C171.823 38.8667 165.817 39.7066 156.478 39.7066H152.895V0.519958H158.721ZM158.09 4.93958V35.287C166.678 35.5469 166.308 27.4376 166.308 20.7882C166.308 14.7587 166.888 4.41962 158.09 4.93958V4.93958Z" fill="#3809BD"/>
               <path d="M191.181 0.519958V4.99957H182.383V17.3585H190.18V21.8781H182.323V35.177H191.181V39.7066H177.168V0.519958H191.181Z" fill="#3809BD"/>
               <path d="M207.257 6.54944C206.014 5.50959 204.453 4.92409 202.832 4.88959C199.97 4.88959 198.198 7.21939 198.198 9.88916C198.148 11.4397 198.668 12.9549 199.659 14.1488L203.613 18.4584C207.196 22.0881 209.198 24.6879 209.198 29.9974C209.198 35.5069 205.765 40.2365 199.99 40.2365C197.923 40.2755 195.905 39.6127 194.264 38.3567V33.1072C195.712 34.3279 197.526 35.0316 199.419 35.107C202.642 35.107 203.993 32.5672 203.993 29.6575C203.993 21.8581 192.983 20.2983 192.983 10.0091C192.983 4.49962 195.896 0.0100074 201.771 0.0100074C203.694 -0.0693016 205.602 0.380339 207.287 1.3099L207.257 6.54944Z" fill="#3809BD"/>
